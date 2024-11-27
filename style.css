@@ -1,0 +1,143 @@
+/* Import a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global styles for the popup */
+html, body {
+    width: 320px; /* Minimum width for the popup */
+    height: 500px; /* Adjust height as needed */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff; /* White text for better contrast on the image */
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Use a pseudo-element to create the upside-down background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.png') no-repeat center center;
+    background-size: cover; /* Cover the entire area */
+    transform: rotate(180deg); /* Flip the image upside down */
+    z-index: -1; /* Place the background behind all content */
+    filter: brightness(0.8); /* Optional: Adjust brightness for better readability */
+}
+
+/* Heading */
+h1 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields and dropdowns */
+input, select {
+    width: 90%; /* Make inputs responsive */
+    max-width: 280px;
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    border: 2px solid #555; /* Darker border for better visibility */
+    border-radius: 5px;
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* Light text for readability */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* Convert button */
+button {
+    width: 90%;
+    max-width: 280px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #0056d6);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for button */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Result container */
+#result {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.75rem;
+    width: 90%;
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #444; /* Dark background for contrast */
+    color: #fff; /* Light text for readability */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for a polished look */
+    box-sizing: border-box;
+    word-wrap: break-word; /* Handle long text overflow */
+}
+
+/* Responsive adjustments for smaller popup windows */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input, select, button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    #result {
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark mode support */
+body.dark-mode {
+    background: linear-gradient(135deg, #1e1e2f, #32324d); /* Dark gradient background */
+    color: #ddd;
+}
+
+body.dark-mode input, body.dark-mode select {
+    background-color: #3c3c55;
+    color: #ddd;
+    border-color: #555;
+}
+
+body.dark-mode button {
+    background: linear-gradient(90deg, #5a73ff, #324bb7);
+}
+
+body.dark-mode #result {
+    background-color: #2a2a3c;
+    color: #ddd;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="exchange.js" defer></script>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    
+    <!-- Input for amount -->
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <!-- Dropdown for selecting the source currency -->
+    <select id="currency-from">
+        <option value="USD">USD - United States Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+        <option value="CNY">CNY - Chinese Yuan</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+    </select>
+    
+    <!-- Dropdown for selecting the target currency -->
+    <select id="currency-to">
+        <option value="USD">USD - United States Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+        <option value="CNY">CNY - Chinese Yuan</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+    </select>
+
+    <!-- Convert button -->
+    <button id="convert">Convert</button>
+
+    <!-- Result container -->
+    <div id="result"></div>
+</body>
+</html>
